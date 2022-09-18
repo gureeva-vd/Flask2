@@ -1,8 +1,8 @@
-"""empty message
+"""Marshmallow and SQLAlchemy
 
-Revision ID: f6eda7049057
+Revision ID: c37093555dc3
 Revises: 
-Create Date: 2021-12-13 07:10:31.616002
+Create Date: 2022-09-18 09:45:37.284672
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f6eda7049057'
+revision = 'c37093555dc3'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('author_model',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=32), nullable=True),
+    sa.Column('surname', sa.String(length=32), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('quote_model',
